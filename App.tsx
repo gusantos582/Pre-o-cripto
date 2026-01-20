@@ -88,10 +88,9 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen text-white bg-[#0d0d0d] font-['Montserrat'] overflow-x-hidden">
-      {/* Header Responsivo */}
       <header className="px-4 md:px-10 py-4 flex justify-between items-center border-b border-white/5 bg-black/50 backdrop-blur-xl z-20 sticky top-0">
         <div className="flex items-center space-x-3">
-          <div className="bg-[#f26d21] p-2 rounded-lg shadow-[0_0_15px_rgba(242,109,33,0.4)]">
+          <div className="bg-[#f26d21] p-2 rounded-lg">
              <i className="fas fa-chart-line text-black text-lg"></i>
           </div>
           <h1 className="text-lg md:text-xl font-black uppercase tracking-tighter">
@@ -104,10 +103,8 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content que se ajusta ao tamanho da aba */}
       <main className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 relative">
         <div className="w-full max-w-5xl flex flex-col items-center space-y-8 md:space-y-12 mb-20">
-          
           <AssetSelector 
             markets={state.markets} 
             selected={state.selectedMarket} 
@@ -121,7 +118,6 @@ const App: React.FC = () => {
             
             {selectedTicker ? (
               <div className="flex flex-col items-center">
-                {/* Preço Gigante que escala com o viewport (vw) */}
                 <div className="flex items-baseline justify-center flex-wrap">
                   <span className="text-xl md:text-4xl font-black text-[#f26d21] mr-2 md:mr-4 opacity-80">R$</span>
                   <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7rem] font-black tracking-tighter uppercase leading-none font-mono-trading drop-shadow-2xl">
@@ -129,7 +125,6 @@ const App: React.FC = () => {
                   </h1>
                 </div>
                 
-                {/* Stats Grid - Muda de 1 para 3 colunas */}
                 <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-0 w-full bg-white/[0.02] border border-white/5 rounded-2xl md:divide-x divide-white/5 overflow-hidden">
                   <div className="p-6 md:p-8 flex flex-col items-center">
                     <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Variação 24h</span>
@@ -158,10 +153,8 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Marquee fixo no rodapé */}
       <TickerMarquee tickers={state.tickers} markets={state.markets} />
 
-      {/* Efeitos de fundo responsivos */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#f26d21]/5 blur-[120px] rounded-full"></div>
       </div>
