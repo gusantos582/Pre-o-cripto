@@ -1,0 +1,5 @@
+{
+  "name": "Cripto Price",
+  "description": "A high-performance cryptocurrency dashboard featuring real-time Binance prices and a smooth stock-market style ticker.",
+  "requestFramePermissions": []
+}
